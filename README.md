@@ -5,9 +5,7 @@ It uses environment variables for authentication and runs a simple test query ag
 
 ---
 
-## 📦 Installation ## Env
-
-
+## 📦 Installation 
 
 Initialize your project and install dependencies using [uv](https://github.com/astral-sh/uv):
 
@@ -17,6 +15,15 @@ uv add "langchain[google-vertexai]"
 uv add python-dotenv
 
 ## Env
-GOOGLE_APPLICATION_CREDENTIALS=path/to/your/service_account.json
-PROJECT_ID=your-gcp-project-id
-LOCATION=us-central1
+
+Make sure you have enabled Vertex AI API in your Google Cloud project.
+
+Notes
+- init_chat_model is a LangGraph helper that uses your environment variables for authentication.
+- GenerativeModel is the direct Vertex AI client for Gemini models.
+- Ensure your service account has the correct permissions (roles/aiplatform.user).
+
+📚 References
+- LangChain Documentation
+- LangGraph Documentation
+- Google Vertex AI
